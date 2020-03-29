@@ -50,4 +50,28 @@ for c in single_word:
 for c in d:
     e.append(newfrequency[c])
 t={}
-        
+for i in range(len(d)):
+    t[d[i]]=e[i]
+print(f(txt),g(word),newfrequency,a,d,e,t)
+plt.bar(d,e,label=u"关键词",color="b")
+plt.xlabel(u"单词",FontProperties=font)
+plt.ylabel(u"词频",FontProperties=font)
+plt.title(u"关键词表",FontProperties=font)
+plt.legend(prop=font)
+plt.show()
+import tkinter as tk
+import tkinter.messagebox
+simpleword=tk.Tk()
+simpleword.title('虚假的word')
+top=tk.Tk()
+def choose():
+    tk.messagebox.showinfo(title='显示原文',message=word)
+Choose=tk.Button(simpleword,text='显示原文',command=choose).pack()
+def showfrequency():
+    tk.messagebox.showinfo(title='展示词频',message=t)
+Showfrequency=tk.Button(simpleword,text='展示词频',command=showfrequency).pack()
+def keyword():
+    tk.messagebox.showinfo(title='展示关键词',message=d)
+Keyword=tk.Button(simpleword,text='展示关键词',command=keyword).pack()
+simpleword.mainloop()
+      
