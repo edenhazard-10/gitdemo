@@ -12,3 +12,15 @@ b=[]
 d=[]
 e=[]
 meaningless_words=["and","or","a","is","the","in","to","are","am","on","for","but","so","of","can"]
+def f(s):
+    for c in txt:
+        c = re.sub(r'[.?!,""/]', ' ', c)
+        c=c.lower()
+        word=c.split(" ")
+        word=[x for x in word if x != '']
+        total_number=len(word)
+        single_word=set(word)
+        for c in single_word:
+            frequency_word=word.count(c)
+            frequency[c]=frequency_word
+        return total_number, word,frequency
