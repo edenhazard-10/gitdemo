@@ -24,3 +24,30 @@ def f(s):
             frequency_word=word.count(c)
             frequency[c]=frequency_word
         return total_number, word,frequency
+total_number,word,frequency=f(txt)
+single_word=set(word)
+def g(s):
+    for c in meaningless_words:
+        while c in word:
+            word.remove(c)
+        while c in stopword:
+            word.remove(c)
+    return word
+newword=g(word)
+for c in newword:
+    count=newword.count(c)
+    newfrequency[c]=count
+for c in single_word:
+    count=newword.count(c)
+    a.append(count)
+    a.sort()
+b=a[-6:]
+Min=min(b)
+for c in single_word:
+    count=newword.count(c)
+    if count>=Min:
+        d.append(c)
+for c in d:
+    e.append(newfrequency[c])
+t={}
+        
