@@ -13,3 +13,6 @@ def f(q,w):
             Max=max(Max,q[j-1]+A[i-j])
             A[i]=Max
     return A[w]
+    t=0
+for t in range(m):
+    print(f(a,b[t]))
